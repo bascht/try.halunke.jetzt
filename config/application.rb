@@ -11,7 +11,7 @@ module TryHalunkeJetzt
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-    config.rvt.whitelisted_ips = %w( 127.0.0.1 192.168.121.1 192.168.121.136 )
+    config.rvt.whitelisted_ips = [ '127.0.0.1', '192.168.121.0/16', '172.17.0.0/16' ]
     config.rvt.default_mount_path = '/repl'
     #config.rvt.command = 'bundle exec halunke'
     config.rvt.command = "docker run --rm -ti --read-only --tmpfs /run --tmpfs /tmp halunke:latest"
