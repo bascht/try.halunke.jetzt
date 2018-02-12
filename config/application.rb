@@ -10,6 +10,7 @@ Bundler.require(*Rails.groups)
 module TryHalunkeJetzt
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.rvt.automount = false
     config.load_defaults 5.1
     config.rvt.whitelisted_ips = [ '127.0.0.1', '192.168.121.0/16', '172.17.0.0/16' ]
   #  config.rvt.default_mount_path = '/repl'
@@ -18,5 +19,10 @@ module TryHalunkeJetzt
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    initializer "load_environment_config" do |app|
+      app.routes.append do
+        mount RVT::Engine => '/repl'
+      end
+    end
   end
 end
