@@ -1,24 +1,27 @@
-# README
+# try.halunke.jetzt
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small Rails app that launches the Halunke web REPL.
 
-Things you may want to cover:
+You can build + run the app locally via Docker:
 
-* Ruby version
+```
+docker build -t try.halunke.jetzt:latest .
+```
 
-* System dependencies
+## Deployment
 
-* Configuration
+The App is deployed to Dokku – if there's no git remote remote set yet, add one via:
 
-* Database creation
+```
+git remote add dokku dokku@try.halunke.jetzt:try.halunke.jetzt
+```
 
-* Database initialization
+Then deploy the current master branch via:
 
-* How to run the test suite
+```
+git push dokku master
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Updating the built-in Halunke version
 
-* Deployment instructions
-
-* ...
+The Halunke version is set via the environment variable `HALUNKE_IMAGE` in the `Dockerfile`. Update it to match the release version found at the [Docker Hub page](https://hub.docker.com/r/moonglum/halunke/builds/).
