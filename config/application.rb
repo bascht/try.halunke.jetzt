@@ -13,7 +13,7 @@ module TryHalunkeJetzt
     config.rvt.automount = false
     config.load_defaults 5.1
     config.rvt.whitelisted_ips = [ '0.0.0.0/0' ]
-    config.rvt.command = "docker run --rm -ti --read-only --tmpfs /run --tmpfs /tmp moonglum/halunke:0.5.3"
+    config.rvt.command = "docker run --rm -ti --read-only --tmpfs /run --tmpfs /tmp #{ENV['HALUNKE_IMAGE']}"
 
     config.action_dispatch.default_headers = {
       'X-Frame-Options' => 'ALLOWALL'

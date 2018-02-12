@@ -1,6 +1,11 @@
-namespace :cleanup do
+namespace :halunke do
+  desc "Pull halunke Docker image"
+  task :pull_image do
+    `docker pull #{ENV['HALUNKE_IMAGE']}`
+  end
+
   desc "Clean up running, stale containers"
-  task :repls do
+  task :cleanup_repls do
     output = `docker ps --filter ancestor="moonglum/halunke" --format "{{.ID}}| {{.CreatedAt}}"`
     lines = output.split("\n")
     containers = lines.map do |line|

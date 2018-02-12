@@ -1,6 +1,7 @@
 {
     "scripts": {
         "dokku": {
+            "predeploy": "bundle exec rake halunke:pull_image"
         }
     }
 }
