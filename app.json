@@ -1,0 +1,7 @@
+{
+    "scripts": {
+        "dokku": {
+            "predeploy": "curl -fsSL get.docker.com | sh"
+        }
+    }
+}
