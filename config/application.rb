@@ -12,10 +12,10 @@ module TryHalunkeJetzt
     # Initialize configuration defaults for originally generated Rails version.
     config.rvt.automount = false
     config.load_defaults 5.1
-    config.rvt.whitelisted_ips = [ '127.0.0.1', '192.168.121.0/16', '172.17.0.0/16' ]
+    config.rvt.whitelisted_ips = [ '0.0.0.0/0' ]
   #  config.rvt.default_mount_path = '/repl'
-    #config.rvt.command = 'bundle exec halunke'
-    config.rvt.command = "docker run --rm -ti --read-only --tmpfs /run --tmpfs /tmp halunke:latest"
+    config.rvt.command = 'bundle exec halunke'
+    #config.rvt.command = "docker run --rm -ti --read-only --tmpfs /run --tmpfs /tmp halunke:latest"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
