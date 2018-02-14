@@ -9,6 +9,6 @@ COPY Gemfile* ./
 RUN bundle install
 COPY . .
 
-ENV HALUNKE_IMAGE="moonglum/halunke:v0.5.3"
+ENV HALUNKE_IMAGE="moonglum/halunke:v0.6.2"
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
