@@ -6,7 +6,7 @@ namespace :halunke do
 
   desc "Clean up running, stale containers"
   task :cleanup_repls do
-    output = `docker ps --filter ancestor="moonglum/halunke" --format "{{.ID}}| {{.CreatedAt}}"`
+    output = `docker ps --filter "label=is_a_repl" --format "{{.ID}}| {{.CreatedAt}}"`
     lines = output.split("\n")
     containers = lines.map do |line|
       items = line.split("|")
