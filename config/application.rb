@@ -12,7 +12,7 @@ module TryHalunkeJetzt
     # Initialize configuration defaults for originally generated Rails version.
     config.rvt.automount = false
     config.load_defaults 5.1
-    config.rvt.whitelisted_ips = [ '0.0.0.0/0' ]
+    config.rvt.whitelisted_ips = [ '0.0.0.0/0', '[::]/0' ]
     config.rvt.command = "docker run --rm -ti --read-only --label is_a_repl --tmpfs /run --tmpfs /tmp #{ENV['HALUNKE_IMAGE']}"
 
     config.action_dispatch.default_headers = {
