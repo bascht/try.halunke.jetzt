@@ -1,4 +1,4 @@
-FROM ruby:2.4.2
+FROM ruby:2.4.3
 
 RUN curl -fsSL get.docker.com | sh && \
     apt-get update -qq && apt-get install -y nodejs && \
