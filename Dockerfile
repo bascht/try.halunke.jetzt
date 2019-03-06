@@ -9,6 +9,6 @@ COPY Gemfile* ./
 RUN bundle install
 COPY . .
 
-ENV HALUNKE_IMAGE="moonglum/halunke:v0.6.2"
+ENV HALUNKE_IMAGE="moonglum/halunke:v0.9.0"
 EXPOSE 3000
 CMD ["/usr/src/app/docker-entrypoint.sh"]
